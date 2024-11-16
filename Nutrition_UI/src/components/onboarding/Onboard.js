@@ -108,15 +108,15 @@
                 ? 88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * (new Date().getFullYear() - new Date(birthday).getFullYear()))
                 : 447.6 + (9.2 * weight) + (3.1 * height) - (4.3 * (new Date().getFullYear() - new Date(birthday).getFullYear()));
 
-            let activityMultiplier = 1.2; // mặc định là 'Not very active'
+            let activityMultiplier = 1.375; // mặc định là 'Not very active'
             switch (activityLevel) {
-                case 'Moderately active':
+                case 'moderately active':
                     activityMultiplier = 1.55;
                     break;
-                case 'Active':
+                case 'active':
                     activityMultiplier = 1.725;
                     break;
-                case 'Very active':
+                case 'very active':
                     activityMultiplier = 1.9;
                     break;
                 default:
@@ -227,10 +227,10 @@ localStorage.setItem('userName', userData.name);
                                     <input
                                         type="radio"
                                         name="activity"
-                                        value="Not very active"
-                                        onChange={() => setActivityLevel('Not very active')}
+                                        value="not very active"
+                                        onChange={() => setActivityLevel('not very active')}
                                     />
-                                    <span className="option-title">Not very active</span>
+                                    <span className="option-title">not very active</span>
                                     <span className="activity-desc">
                                         You spend most of your day sitting or doing minimal physical activity.
                                     </span>
@@ -239,10 +239,10 @@ localStorage.setItem('userName', userData.name);
                                     <input
                                         type="radio"
                                         name="activity"
-                                        value="Moderately active"
-                                        onChange={() => setActivityLevel('Moderately active')}
+                                        value="moderately active"
+                                        onChange={() => setActivityLevel('moderately active')}
                                     />
-                                    <span className="option-title">Moderately active</span>
+                                    <span className="option-title">moderately active</span>
                                     <span className="activity-desc">
                                         You engage in light physical activity, like walking or occasional exercise.
                                     </span>
@@ -251,10 +251,10 @@ localStorage.setItem('userName', userData.name);
                                     <input
                                         type="radio"
                                         name="activity"
-                                        value="Active"
-                                        onChange={() => setActivityLevel('Active')}
+                                        value="active"
+                                        onChange={() => setActivityLevel('active')}
                                     />
-                                    <span className="option-title">Active</span>
+                                    <span className="option-title">active</span>
                                     <span className="activity-desc">
                                         You are regularly active, exercising several times a week and moving often.
                                     </span>
@@ -263,10 +263,10 @@ localStorage.setItem('userName', userData.name);
                                     <input
                                         type="radio"
                                         name="activity"
-                                        value="Very active"
-                                        onChange={() => setActivityLevel('Very active')}
+                                        value="very active"
+                                        onChange={() => setActivityLevel('very active')}
                                     />
-                                    <span className="option-title">Very active</span>
+                                    <span className="option-title">very active</span>
                                     <span className="activity-desc">
                                         You have a highly active lifestyle, engaging in intense exercise or physical work.
                                     </span>
