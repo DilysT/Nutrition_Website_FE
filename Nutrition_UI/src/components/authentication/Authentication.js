@@ -26,7 +26,7 @@ const Authentication = ({ onComplete }) => {
             return;
         }
         try {
-            const response = await fetch('http://localhost:3000/api/users/login', {
+            const response = await fetch('https://nutrition-website-be-1.onrender.com/api/users/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ const Authentication = ({ onComplete }) => {
                 localStorage.setItem('token', data.token);
                 
                 // Fetch user data to get userId
-                const userResponse = await fetch('http://localhost:3000/api/auth/users', {
+                const userResponse = await fetch('https://nutrition-website-be-1.onrender.com/api/auth/users', {
                     method: 'GET',
                     headers: {  
                         'Authorization': `Bearer ${data.token}`,
@@ -74,7 +74,7 @@ const Authentication = ({ onComplete }) => {
             return;
         }
         try {
-            const response = await fetch('http://localhost:3000/api/users/forgot-password', {
+            const response = await fetch('https://nutrition-website-be-1.onrender.com/api/users/forgot-password', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

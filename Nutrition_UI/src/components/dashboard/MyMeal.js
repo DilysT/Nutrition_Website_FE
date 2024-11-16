@@ -111,7 +111,7 @@ const { setSelectedDate } = useContext(DateContext);
       console.log('Token:', token);
 
       // Gửi yêu cầu POST để thêm thức ăn vào bữa ăn
-      const response = await fetch(`http://localhost:3000/api/auth/meals/${mealId}/foods`, {
+      const response = await fetch(`https://nutrition-website-be-1.onrender.com/api/auth/meals/${mealId}/foods`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -122,7 +122,7 @@ const { setSelectedDate } = useContext(DateContext);
 
       // Kiểm tra nếu phản hồi từ server thành công
       if (response.ok) {
-        const userResponse = await fetch(`http://localhost:3000/api/auth/meals/${mealId}/foods/${foodId}?date=${encodeURIComponent(date)}`, {
+        const userResponse = await fetch(`https://nutrition-website-be-1.onrender.com/api/auth/meals/${mealId}/foods/${foodId}?date=${encodeURIComponent(date)}`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -199,7 +199,7 @@ const { setSelectedDate } = useContext(DateContext);
   const handleShowfood = async () => {
     try {
       const token = localStorage.getItem('token');
-      const userResponse = await fetch(`http://localhost:3000/api/auth/foods/${foodId}`, {
+      const userResponse = await fetch(`https://nutrition-website-be-1.onrender.com/api/auth/foods/${foodId}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -234,7 +234,7 @@ const { setSelectedDate } = useContext(DateContext);
   const handleGetcalendar = async (date) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3000/api/auth/meals?date=${encodeURIComponent(date)}`, {
+      const response = await fetch(`https://nutrition-website-be-1.onrender.com/api/auth/meals?date=${encodeURIComponent(date)}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -308,7 +308,7 @@ const { setSelectedDate } = useContext(DateContext);
     try {
       const token = localStorage.getItem('token');
       console.log({ 'We are running in handleAddCaledar ': date });
-      const diaryresponse = await fetch(`http://localhost:3000/api/auth/diaries`, {
+      const diaryresponse = await fetch(`https://nutrition-website-be-1.onrender.com/api/auth/diaries`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -345,7 +345,7 @@ const { setSelectedDate } = useContext(DateContext);
   const handleTotal = async (date) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3000/api/auth/meals?date=${encodeURIComponent(date)}`, {
+      const response = await fetch(`https://nutrition-website-be-1.onrender.com/api/auth/meals?date=${encodeURIComponent(date)}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -411,7 +411,7 @@ const { setSelectedDate } = useContext(DateContext);
       console.log("date", date);
       console.log(`Editing food with mealId: ${mealId}, foodId: ${id}`);
 
-      const response = await fetch(`http://localhost:3000/api/auth/meals/${mealId}/foods/${id}`, {
+      const response = await fetch(`https://nutrition-website-be-1.onrender.com/api/auth/meals/${mealId}/foods/${id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -421,7 +421,7 @@ const { setSelectedDate } = useContext(DateContext);
       });
 
       if (response.ok) {
-        const userResponse = await fetch(`http://localhost:3000/api/auth/meals/${mealId}/foods/${id}?date=${encodeURIComponent(date)}`, {
+        const userResponse = await fetch(`https://nutrition-website-be-1.onrender.com/api/auth/meals/${mealId}/foods/${id}?date=${encodeURIComponent(date)}`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -474,7 +474,7 @@ const { setSelectedDate } = useContext(DateContext);
       const date = calendar;
       console.log("date", date)
       console.log(`Deleting food with mealId: ${mealId}, foodId: ${id}`); // Chú ý ở đây, `id` nên là `record.key`
-      const response = await fetch(`http://localhost:3000/api/auth/meals/${mealId}/foods/${id}`, {
+      const response = await fetch(`https://nutrition-website-be-1.onrender.com/api/auth/meals/${mealId}/foods/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,

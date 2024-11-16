@@ -39,7 +39,7 @@ const Header = () => {
         }
 
         try {
-            const response = await fetch(`http://localhost:3000/api/auth/users`, {
+            const response = await fetch(`https://nutrition-website-be-1.onrender.com/api/auth/users`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`,

@@ -145,7 +145,7 @@
 // Lưu tên người dùng vào localStorage
 localStorage.setItem('userName', userData.name);
             try {
-                const response = await fetch('http://localhost:3000/api/users/signup', {
+                const response = await fetch('https://nutrition-website-be-1.onrender.com/api/users/signup', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
