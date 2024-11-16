@@ -1,112 +1,116 @@
 @import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap');
 
-.sidebar {
-    width: 220px;
-    height: 100%;
-    background-color: #1F263E;
-    color: white;
-    padding: 20px 10px;
-    border: 1px solid #1F263E;
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 1000;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(0); /* Show sidebar by default */
-}
-
-/* Sidebar collapsed state */
-
-:where(.css-dev-only-do-not-override-49qm).ant-menu-light.ant-menu-root.ant-menu-inline, :where(.css-dev-only-do-not-override-49qm).ant-menu-light>.ant-menu.ant-menu-root.ant-menu-inline, :where(.css-dev-only-do-not-override-49qm).ant-menu-light.ant-menu-root.ant-menu-vertical, :where(.css-dev-only-do-not-override-49qm).ant-menu-light>.ant-menu.ant-menu-root.ant-menu-vertical {
-    border-inline-end: 1px solid rgba(5, 5, 5, 0.06);
-}
-:where(.css-dev-only-do-not-override-49qm).ant-menu-light.ant-menu-root.ant-menu-vertical{
-    background-color: #1F263E;
-}
-.hamburger {
-    position: fixed;
-    top: 8px;
-    left: 20px;
-    z-index: 1100;
-    cursor: pointer;
-    font-size: 24px;
-    display: none; /* Hidden on larger screens */
-}
-
-.logo {
-    font-family: "Kantumruy Pro", sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    color: white;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.menu {
-    border: none;
-}
-
-.menu .ant-menu-item {
-    padding-left: 20px !important;
-    margin-bottom: 20px;
-    color: white;
-}
-
-.menu .ant-menu-item-selected {
-    background-color: #303750 !important; /* Set selected background to darker color */
-    color: white !important; /* Set selected text color to white */
-}
-.logo {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px; /* Add some space between logo and menu */
-  }
-  
-  .logo-img {
-    margin-bottom: 8px;
-    margin-left: 35px;
-    margin-right: 4px; /* Space between the logo and the text */
-  }
-  
-  
-
-/* Larger screens (min-width: 768px), sidebar should always be visible */
-@media (min-width: 768px ) {
-    .sidebar {
-        transform: translateX(0); /* Ensure sidebar is visible */
-    }
-    .hamburger {
-        display: none; /* Hide hamburger on larger screens */
-    }
-}
-
-/* Smaller screens (max-width: 768px), hide sidebar by default and show hamburger */
-@media (max-width: 425px) {
-    .hamburger {
-        display: block; /* Show hamburger button */
-        z-index: 1200;
-    }
 
     .sidebar {
-        transform: translateX(-100%); /* Hide sidebar by default on small screens */
+        width: 220px;
+        height: 100%;
+        background-color: #1F263E;
+        color: white;
+        padding: 20px 10px;
+        border: 1px solid #1F263E;
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1000;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(0); /* Show sidebar by default */
+    }
+
+    /* Sidebar collapsed state */
+
+    :where(.css-dev-only-do-not-override-49qm).ant-menu-light.ant-menu-root.ant-menu-inline,
+    :where(.css-dev-only-do-not-override-49qm).ant-menu-light>.ant-menu.ant-menu-root.ant-menu-inline,
+    :where(.css-dev-only-do-not-override-49qm).ant-menu-light.ant-menu-root.ant-menu-vertical,
+    :where(.css-dev-only-do-not-override-49qm).ant-menu-light>.ant-menu.ant-menu-root.ant-menu-vertical {
+        border-inline-end: 1px solid rgba(5, 5, 5, 0.06);
+        background-color: #1F263E !important;
+    }
+    
+    
+    .hamburger {
+        position: fixed;
+        top: 8px;
+        left: 20px;
         z-index: 1100;
+        cursor: pointer;
+        font-size: 24px;
+        display: none; /* Hidden on larger screens */
     }
 
-    .sidebar.collapsed {
-        transform: translateX(0); /* Show sidebar when toggled */
-    }
-}
-
-@media (max-width:768)
-{ 
-    .sidebar {
-        transform: translateX(100%); /* Hide sidebar by default on small screens */
-        z-index: 2100;
-    }
-    .hamburger {
-        display: block; /* Show hamburger button */
-        z-index: 1200;
+    .logo {
+        font-family: "Kantumruy Pro", sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        color: white;
+        text-align: center;
+        margin-bottom: 30px;
     }
 
-}
+    .menu {
+        border: none;
+    }
+
+    .menu .ant-menu-item {
+        padding-left: 20px !important;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    .menu .ant-menu-item-selected {
+        background-color: #303750 !important; /* Set selected background to darker color */
+        color: white !important; /* Set selected text color to white */
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px; /* Add some space between logo and menu */
+    }
+    
+    .logo-img {
+        margin-bottom: 8px;
+        margin-left: 35px;
+        margin-right: 4px; /* Space between the logo and the text */
+    }
+    
+    
+
+    /* Larger screens (min-width: 768px), sidebar should always be visible */
+    @media (min-width: 768px ) {
+        .sidebar {
+            transform: translateX(0); /* Ensure sidebar is visible */
+        }
+        .hamburger {
+            display: none; /* Hide hamburger on larger screens */
+        }
+    }
+
+    /* Smaller screens (max-width: 768px), hide sidebar by default and show hamburger */
+    @media (max-width: 425px) {
+        .hamburger {
+            display: block; /* Show hamburger button */
+            z-index: 1200;
+        }
+
+        .sidebar {
+            transform: translateX(-100%); /* Hide sidebar by default on small screens */
+            z-index: 1100;
+        }
+
+        .sidebar.collapsed {
+            transform: translateX(0); /* Show sidebar when toggled */
+        }
+    }
+
+    @media (max-width:768)
+    { 
+        .sidebar {
+            transform: translateX(100%); /* Hide sidebar by default on small screens */
+            z-index: 2100;
+        }
+        .hamburger {
+            display: block; /* Show hamburger button */
+            z-index: 1200;
+        }
+
+    }
