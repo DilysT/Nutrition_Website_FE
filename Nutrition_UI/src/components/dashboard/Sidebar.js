@@ -49,7 +49,7 @@ const SideBar = () => {
           <span className="logo-text">Nutritioners</span>
         </div>
 
-        <Menu mode="vertical" defaultSelectedKeys={['1']} className="menu">
+        <Menu mode="vertical" defaultSelectedKeys={['1']} className="menu"  style={{ backgroundColor: '#1F263E', color: '#1F263E!important' }} >
           <Menu.Item key="1">
             <Link to="/dashboard">
               <img src={dashboardIcon} alt="Dashboard Icon" style={{ width: '20px', marginRight: '10px' }} />
