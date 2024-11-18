@@ -180,12 +180,13 @@ input.password-input1{
 }
 input.name-input1,
 input.email-input1 {
-    margin-top: 10px;
+    margin-top: 12px;
     font-size: 16px;
     width:580px;
     height: 40px;
     margin-bottom: 35px;
     margin-left: 14px;
+    border: 1px solid black;
 }
 
 p {
@@ -208,15 +209,27 @@ h2{
     color:black;
     background-color: white;
     position: absolute;
-    margin-top: 2px;
-   margin-right: 18px;
+    margin-top: -260px;
+   margin-left: 580px;
     padding: 10px;
     cursor: pointer;
     width: 12px;
 }
 
-.close-modal:hover {
+.close-modal,
+.close-modal1:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.close-modal1{
+    color:black;
     background-color: white;
+    position: absolute;
+    margin-top: -430px;
+    margin-left: 580px;
+    padding: 10px;
+    cursor: pointer;
+    width: 12px;
 }
 
 /*Gender input*/

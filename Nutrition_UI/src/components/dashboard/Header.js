@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext,useState, useEffect } from 'react';
 import '../../styles/Header.css';
 import { Avatar } from 'antd';
 import { UserOutlined, DownOutlined } from '@ant-design/icons';
 import maskImage from '../../dashboard_image/Mask.png';
 import { useNavigate } from 'react-router-dom';
-
+import { UserContext } from './UserContext';
 const Header = () => {
     const [isDropdownVisible, setDropdownVisible] = useState(false);
-    const [userName, setUserName] = useState('');
+    const { userName, setUserName } = useContext(UserContext);
     const navigate = useNavigate();
 
     const toggleDropdown = () => {

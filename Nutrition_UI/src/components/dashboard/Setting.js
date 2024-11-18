@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext,useState, useEffect } from "react";
 
 import edit from "../../image/setting_image/Edit.svg";
 import { DatePicker, message } from 'antd';
 import '../../styles/Setting.css';
+import { UserContext } from './UserContext';
 
 const Setting = () => {
-    const [name, setName] = useState("");
+    const { userName, setUserName } = useContext(UserContext); // Lấy `userName` từ context
+    const [name, setName] = useState(userName || ""); // Sử dụng giá trị từ context nếu có
+    const [newPassword, setNewPassword] = useState("");
+    const [confirmNewPassword, setConfirmNewPassword] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [gender, setGender] = useState("");
@@ -45,7 +49,7 @@ useEffect(() => {
                 const goalData = data.goal; // Use the first goal if available
                 console.log('User Data:', userData);
                 console.log('Goal Data:', goalData);
-
+                setUserName(userData.name); // Cập nhật `userName` trong context
                 setName(userData.name);
                 setEmail(userData.email);
                 setGender(userData.gender);
@@ -76,7 +80,8 @@ useEffect(() => {
         const updatedData = { 
             name, 
             email, 
-            password, 
+            password: password || undefined, // Gửi password nếu có
+            newPassword: newPassword || undefined, // Gửi newPassword nếu có 
             gender, 
             birthday, 
             height, 
@@ -84,7 +89,16 @@ useEffect(() => {
             activity_level: activityLevel, 
             goal: [{ weight_goal: goalWeight }]
         };
-
+        // Check if passwords match
+    if (newPassword !== confirmNewPassword) {
+        message.error("New password and confirm password do not match!");
+        return;
+    }
+// Kiểm tra nếu có mật khẩu mới thì yêu cầu phải nhập mật khẩu cũ
+if (newPassword && !password) {
+    message.error("Vui lòng nhập mật khẩu cũ để thay đổi mật khẩu.");
+    return;
+}
         fetch(`https://nutrition-website-be-1.onrender.com/api/auth/users`, {
             method: 'PUT',
             headers: {
@@ -96,7 +110,11 @@ useEffect(() => {
         .then(response => {
             if (response.ok) {
                 message.success("Information updated successfully!");
+                setUserName(name); // Cập nhật `userName` trong context sau khi lưu thành công
                 setIsDisabled(true); // Disable fieldsets after update
+                setPassword(""); // Reset trường password
+                setNewPassword(""); // Reset trường newPassword
+                setConfirmNewPassword(""); // Reset confirm password
             } else {
                 throw new Error("Update failed");
             }
@@ -163,33 +181,49 @@ useEffect(() => {
                     )}
                 </div>
 
-                {/* Password Section */}
-                <div className="password">
-                    <p>Password</p>
-                    <input type="password" className="password-input" value={password} disabled />
-                    <img onClick={toggleModal3} src={edit} alt="edit" className="edit-icon-password" />
-                    {modal3 && (
-                        <div className="modal">
-                            <div onClick={toggleModal3} className="overlay"></div>
-                            <div className="modal-content1">
-                                <h3>Change your password</h3>
-                                <div className="name-container">
-                                    <div className="password-input-again">Current password</div>
-                                    <input type="password" className="password-input1" />
-                                    <div className="password-input-again">New password</div>
-                                    <input type="password" className="password-input1" onChange={(e) => setPassword(e.target.value)} />
-                                    <div className="password-input-again">Confirm new password</div>
-                                    <input type="password" className="password-input1" />
-                                </div>
-                                <div className="modal-btn">
-                                    <button className="cancel-modal" onClick={toggleModal3}>Cancel</button>
-                                    <button className="save-modal1" onClick={updateUserData}>Save</button>
-                                </div>
-                                <button className="close-modal" onClick={toggleModal3}>X</button>
-                            </div>
-                        </div>
-                    )}
+               {/* Password Section */}
+<div className="password">
+    <p>Password</p>
+    <input type="password" className="password-input" value={password} disabled />
+    <img onClick={toggleModal3} src={edit} alt="edit" className="edit-icon-password" />
+    {modal3 && (
+        <div className="modal">
+            <div onClick={toggleModal3} className="overlay"></div>
+            <div className="modal-content1">
+                <h3>Change your password</h3>
+                <div className="name-container">
+                    <div className="password-input-again">Current password</div>
+                    <input
+                        type="password"
+                        className="password-input1"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <div className="password-input-again">New password</div>
+                    <input
+                        type="password"
+                        className="password-input1"
+                        value={newPassword}
+                        onChange={(e) => setNewPassword(e.target.value)}
+                    />
+                    <div className="password-input-again">Confirm new password</div>
+                    <input
+                      type="password"
+                      className="password-input1"
+                      value={confirmNewPassword}
+                      onChange={(e) => setConfirmNewPassword(e.target.value)}
+                    />
                 </div>
+                <div className="modal-btn">
+                    <button className="cancel-modal" onClick={toggleModal3}>Cancel</button>
+                    <button className="save-modal1" onClick={updateUserData}>Save</button>
+                </div>
+                <button className="close-modal1" onClick={toggleModal3}>X</button>
+            </div>
+        </div>
+    )}
+</div>
+
             </div>
     
 
