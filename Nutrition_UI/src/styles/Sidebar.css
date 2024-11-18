@@ -21,9 +21,13 @@
 :where(.css-dev-only-do-not-override-ccdg5a).ant-menu-light.ant-menu-root.ant-menu-vertical,
 :where(.css-dev-only-do-not-override-ccdg5a).ant-menu-light>.ant-menu.ant-menu-root.ant-menu-vertical {
     border-inline-end: none;
-    background-color: #1F263E;
+    background-color: #1F263E!important;
 }
 
+:where(.css-dev-only-do-not-override-49qm).ant-menu-light.ant-menu-root.ant-menu-inline, :where(.css-dev-only-do-not-override-49qm).ant-menu-light>.ant-menu.ant-menu-root.ant-menu-inline, :where(.css-dev-only-do-not-override-49qm).ant-menu-light.ant-menu-root.ant-menu-vertical, :where(.css-dev-only-do-not-override-49qm).ant-menu-light>.ant-menu.ant-menu-root.ant-menu-vertical {
+    border-inline-end: 1px solid rgba(5, 5, 5, 0.06);
+    background: #1F263E !important;
+}
 .hamburger {
     position: fixed;
     top: 8px;
