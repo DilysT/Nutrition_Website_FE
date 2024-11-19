@@ -1,4 +1,4 @@
-# 📱 **Nutritioners: Nutrition Tracking App**
+# 📱 **Nutritioners: Nutrition Tracking Website**
 
 ## 1️⃣ **Project Description**
 
