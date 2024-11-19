@@ -53,10 +53,10 @@ The project consists of three main components:
 To get started with the project, clone the repository and install the required dependencies:
 
 # Clone this repository
-git clone https://github.com/yourusername/nutritioners.git
+git clone (https://github.com/DilysT/Nutrition_Website_FE)
 
 # Navigate to the project directory
-cd nutritioners
+cd Nutrition_UI
 
 # Install required packages
 npm install
@@ -68,7 +68,7 @@ You have two options for running the project:
 
 ### **Option 1: Frontend Only**
 
-1. Open the `App.js` file and **comment out the authentication check**. This will allow you to access the Dashboard directly without logging in.
+1. Open the `App.js` file and **clear out the authentication check**. This will allow you to access the Dashboard directly without logging in.
    
 3. Start the application using the command below:
    npm start
@@ -76,7 +76,7 @@ You have two options for running the project:
 5. Open http://localhost:3000 in your web browser to view the app.
 
 ### **Option 2: Full Project with Backend**
-1. Clone the backend repository and follow its setup instructions.
+1. Clone the backend with the same name in my repository and follow its setup instructions.
    
 2. Set up a MySQL database, then update the database connection settings in the backend project.
 
@@ -152,7 +152,7 @@ This section provides a detailed guide on how to use the key features of the Nut
 
 ### 💬 **Contact Information**
 
-If you have any questions or feedback, please contact me at:
+If you have any questions or feedback, don't hesitate to get in touch with me at:
 
 - **Email**: Thienngo21122003@gmail.com
 - **GitHub**: [DilysT][(https://github.com/DilysT)]
