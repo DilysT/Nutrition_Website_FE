@@ -7,6 +7,8 @@ import MyMeal from './components/dashboard/MyMeal';
 import Setting from './components/dashboard/Setting';
 import Authentication from './components/authentication/Authentication';
 import Resetpw from './components/authentication/Resetpw';
+import AdminSideBar from './components/admin/AdminSideBar';
+import FoodManagement from './components/admin/food/FoodManagement';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import { DateProvider } from './components/dashboard/DateContext';
@@ -34,20 +36,20 @@ const App = () => {
             <div className="app">
                 <UserProvider>
                     <Routes>
-                        <Route 
-                            path="/authentication" 
-                            element={<Authentication onComplete={completeAuthentication} />} 
+                        <Route
+                            path="/authentication"
+                            element={<Authentication onComplete={completeAuthentication} />}
                         />
                         <Route
                             path="/resetpw"
                             element={<Resetpw onComplete={completeResetpw} />}
                         />
-                        <Route 
-                            path="/onboard" 
-                            element={<Onboard onComplete={completeOnboarding} />} 
+                        <Route
+                            path="/onboard"
+                            element={<Onboard onComplete={completeOnboarding} />}
                         />
-                        <Route 
-                            path="/" 
+                        <Route
+                            path="/"
                             element={
                                 !isOnboardingComplete ? (
                                     <Navigate to="/onboard" />
@@ -56,10 +58,10 @@ const App = () => {
                                 ) : (
                                     <Navigate to="/dashboard" />
                                 )
-                            } 
+                            }
                         />
-                        <Route 
-                            path="/dashboard" 
+                        <Route
+                            path="/dashboard"
                             element={
                                 isAuthenticated ? (
                                     <>
@@ -74,8 +76,8 @@ const App = () => {
                                 )
                             }
                         />
-                        <Route 
-                            path="/my-meal" 
+                        <Route
+                            path="/my-meal"
                             element={
                                 isAuthenticated ? (
                                     <>
@@ -88,10 +90,10 @@ const App = () => {
                                 ) : (
                                     <Navigate to="/authentication" />
                                 )
-                            } 
+                            }
                         />
-                        <Route 
-                            path="/settings" 
+                        <Route
+                            path="/settings"
                             element={
                                 isAuthenticated ? (
                                     <>
@@ -102,8 +104,19 @@ const App = () => {
                                 ) : (
                                     <Navigate to="/authentication" />
                                 )
-                            } 
+                            }
                         />
+                        <Route
+                            path="/admin/food"
+                            element={
+                                <div style={{ backgroundColor: 'rgb(242, 245, 253)', minHeight: '100vh' }}>
+                                    <AdminSideBar />
+                                    <Header />
+                                    <FoodManagement />
+                                </div>
+                            }
+                        />
+
                     </Routes>
                 </UserProvider>
             </div>

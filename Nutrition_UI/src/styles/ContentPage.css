@@ -1,0 +1,122 @@
+.content {
+    margin-top: 20px;
+    /* Height of the header */
+    margin-left: 250px;
+    padding-right: 25px;
+    max-width: 1275px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 16px;
+}
+
+.title {
+    padding-left: 20px;
+    padding-top: 10px;
+    font-size: 30px;
+}
+
+.search-wrapper {
+    position: relative;
+    /* Container for positioning the icon inside */
+    display: inline-block;
+}
+
+.search-wrapper img {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.search-bar {
+    padding-left: 30px;
+    /* Add enough space to avoid overlap with the icon */
+    padding-right: 10px;
+    /* Optional, for spacing on the right */
+    height: 30px;
+    width: 200px;
+    /* Adjust width as needed */
+    font-size: 14px;
+    /* Adjust font size as needed */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    /* Positions elements on opposite sides */
+    align-items: center;
+    /* Vertically center the items */
+    margin-bottom: 20px;
+    /* Add some space below the header */
+    padding-left: 20px;
+}
+
+/* Set the table to separate borders */
+.table {
+    border-collapse: separate;
+    border-right: 1px solid gray;
+    border-left: 1px solid gray;
+    border-spacing: 0;
+    /* Removes space between cells */
+    border-radius: 6px;
+    margin-left: 20px;
+}
+
+/* Set borders on top and bottom of each cell */
+.table th,
+.table td {
+    border-top: 1px solid gray;
+    /* Border on top of each cell */
+}
+
+/* Optionally, remove left and right borders */
+.table th,
+.table td {
+    border-left: none;
+    border-right: none;
+}
+
+.edit-icon {
+    cursor: pointer;
+}
+
+.delete-icon {
+    cursor: pointer;
+}
+
+.field-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-box {
+    margin-top: 5px;
+    font-size: 16px;
+    width: 60%;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    border-radius: 8px;
+}
+
+/* Make sure the button is not full-width */
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    /* Aligns the button to the right */
+}
+
+.btn {
+    width: auto;
+    /* Ensure the button takes only the necessary width */
+}
+.btn-insert{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

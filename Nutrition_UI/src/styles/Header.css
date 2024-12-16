@@ -10,9 +10,9 @@
     border: 1px solid #f0f0f0;
     width: 1100px; /* Trừ phần width của sidebar */
     height: 60px;
-    margin-left: 242px; /* Đặt header bắt đầu từ bên phải của sidebar */
+    margin-left: 221px; /* Đặt header bắt đầu từ bên phải của sidebar */
   background-color: white;
-  position:fixed;
+  /* position:fixed; */
 z-index: 1000;
   }
   
