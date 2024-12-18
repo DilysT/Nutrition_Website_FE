@@ -26,7 +26,7 @@ const Authentication = ({ onComplete }) => {
             return;
         }
         try {
-            const response = await fetch('https://nutrition-website-be-1.onrender.com/api/users/login', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ const Authentication = ({ onComplete }) => {
                 localStorage.setItem('token', data.token);
                 
                 // Fetch user data to get userId
-                const userResponse = await fetch('https://nutrition-website-be-1.onrender.com/api/auth/users', {
+                const userResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/users`, {
                     method: 'GET',
                     headers: {  
                         'Authorization': `Bearer ${data.token}`,

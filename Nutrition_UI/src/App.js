@@ -111,31 +111,43 @@ const App = () => {
                         <Route
                             path="/admin/food"
                             element={
-                                <div style={{ backgroundColor: 'rgb(242, 245, 253)', minHeight: '100vh' }}>
-                                    <AdminSideBar />
-                                    <Header />
-                                    <FoodManagement />
-                                </div>
+                                isAuthenticated ? (
+                                    <div style={{ backgroundColor: 'rgb(242, 245, 253)', minHeight: '100vh' }}>
+                                        <AdminSideBar />
+                                        <Header />
+                                        <FoodManagement />
+                                    </div>
+                                ) : (
+                                    <Navigate to="/authentication" />
+                                )
                             }
                         />
                         <Route
                             path="/admin/meal"
                             element={
-                                <div style={{ backgroundColor: 'rgb(242, 245, 253)', minHeight: '100vh' }}>
-                                    <AdminSideBar />
-                                    <Header />
-                                    <MealManagement />
-                                </div>
+                                isAuthenticated ? (
+                                    <div style={{ backgroundColor: 'rgb(242, 245, 253)', minHeight: '100vh' }}>
+                                        <AdminSideBar />
+                                        <Header />
+                                        <MealManagement />
+                                    </div>
+                                ) : (
+                                    <Navigate to="/authentication" />
+                                )
                             }
                         />
                         <Route
                             path="/admin/user-account"
                             element={
-                                <div style={{ backgroundColor: 'rgb(242, 245, 253)', minHeight: '100vh' }}>
-                                    <AdminSideBar />
-                                    <Header />
-                                    <UserManagement />
-                                </div>
+                                isAuthenticated ? (
+                                    <div style={{ backgroundColor: 'rgb(242, 245, 253)', minHeight: '100vh' }}>
+                                        <AdminSideBar />
+                                        <Header />
+                                        <UserManagement />
+                                    </div>
+                                ) : (
+                                    <Navigate to="/authentication" />
+                                )
                             }
                         />
 

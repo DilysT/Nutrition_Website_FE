@@ -26,7 +26,7 @@ const Resetpw = () => {
         }
 
         try {
-            const response = await fetch('https://nutrition-website-be-1.onrender.com/api/users/reset-password', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/reset-password`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

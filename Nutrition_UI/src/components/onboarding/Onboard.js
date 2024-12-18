@@ -145,7 +145,7 @@ const Onboard = (props) => {
 // Lưu tên người dùng vào localStorage
 localStorage.setItem('userName', userData.name);
         try {
-            const response = await fetch('https://nutrition-website-be-1.onrender.com/api/users/signup', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/signup`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

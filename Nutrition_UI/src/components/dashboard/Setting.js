@@ -34,7 +34,7 @@ const Setting = () => {
 useEffect(() => {
     const fetchUserData = async () => {
         try {
-            const response = await fetch(`https://nutrition-website-be-1.onrender.com/api/auth/users`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/users`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`,

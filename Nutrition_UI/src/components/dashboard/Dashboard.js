@@ -31,7 +31,7 @@ const Dashboard = () => {
   const getDashboardData = async (date) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`https://nutrition-website-be-1.onrender.com/api/auth/diaries/meals?date=${encodeURIComponent(date)}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/diaries/meals?date=${encodeURIComponent(date)}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
