@@ -10,6 +10,7 @@ import Resetpw from './components/authentication/Resetpw';
 import AdminSideBar from './components/admin/AdminSideBar';
 import FoodManagement from './components/admin/food/FoodManagement';
 import MealManagement from './components/admin/meal/MealManagement';
+import UserManagement from './components/admin/userAccount/UserManagement';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import { DateProvider } from './components/dashboard/DateContext';
@@ -124,6 +125,16 @@ const App = () => {
                                     <AdminSideBar />
                                     <Header />
                                     <MealManagement />
+                                </div>
+                            }
+                        />
+                        <Route
+                            path="/admin/user-account"
+                            element={
+                                <div style={{ backgroundColor: 'rgb(242, 245, 253)', minHeight: '100vh' }}>
+                                    <AdminSideBar />
+                                    <Header />
+                                    <UserManagement />
                                 </div>
                             }
                         />
