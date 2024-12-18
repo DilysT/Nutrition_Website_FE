@@ -20,11 +20,6 @@ const FoodManagement = () => {
 
     //Param initiate
     const [nameMeal, setNameMeal] = useState('');
-    const [servingSize, setServingSize] = useState('');
-    const [calories, setCalories] = useState('');
-    const [protein, setProtein] = useState('');
-    const [fat, setFat] = useState('');
-    const [carbs, setCarbs] = useState('');
     const [mealId, setMealId] = useState('')
     const token = localStorage.getItem("token")
 
