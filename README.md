@@ -108,6 +108,9 @@ This section provides a detailed guide on how to use the key features of the Nut
 - All the collected data is stored securely for personalized tracking and meal recommendations.
 
 ### **Login Page (Authentication)** 🔐
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7427bf62-b90f-420e-9e87-7cb7bfb73a95" width="600" height="350">
+</p>
 
 - Users can log in using their registered **email** and **password**.
 - If a user forgets their password, the app provides a **Forgot Password** feature:
@@ -115,17 +118,17 @@ This section provides a detailed guide on how to use the key features of the Nut
 - Upon successful login, users are redirected to the main Dashboard.
 
 ### **Dashboard** 📊
-
+## 📸 Screenshots
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/bfceb48b-a0eb-4ebe-8a49-34eaf38a5f5a" width="600" height="350">
+</p>
 - The Dashboard is the main interface where users can track their daily nutrition metrics. Key features include:
   - **Daily Calorie Tracking**: Displays the total calories consumed and the remaining calories based on the user's goal.
   - **Macro Breakdown**: Shows a detailed breakdown of daily intake for **fat**, **carbs**, and **protein**.
   - Interactive **charts and graphs** provide a visual representation of the user's progress.
 
 ### **MyMeal Page** 🍽️
-## 📸 Screenshots
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/bfceb48b-a0eb-4ebe-8a49-34eaf38a5f5a" width="600" height="300">
-</p>
+
 
 - The MyMeal page helps users plan their meals effectively by selecting dishes from a predefined list.
 - Users can create a daily menu for:
