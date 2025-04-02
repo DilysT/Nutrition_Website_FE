@@ -124,7 +124,7 @@ This section provides a detailed guide on how to use the key features of the Nut
 ### **MyMeal Page** 🍽️
 ## 📸 Screenshots
 <p align="center">
-  <img src="[https://github.com/user-attachments/assets/1d92efa2-d6ed-4c90-bb61-b91943740a8b](https://github.com/user-attachments/assets/8c6eb541-824a-473f-af02-2e38daecb310)" width="600" height="300">
+  <img src="(https://github.com/user-attachments/assets/80c78d2a-dac8-499a-b01f-9842c369f73a)" width="600" height="300">
 </p>
 
 - The MyMeal page helps users plan their meals effectively by selecting dishes from a predefined list.
